@@ -1,7 +1,6 @@
 package com.otus.questionnaire.service;
 
 import com.otus.questionnaire.dao.QuestionDao;
-import com.otus.questionnaire.dao.QuestionDaoImpl;
 import com.otus.questionnaire.domain.QuestionsAndAnswers;
 import lombok.Data;
 
