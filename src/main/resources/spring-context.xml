@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+
+    <bean id="questionsAndAnswers" class="com.otus.questionnaire.domain.QuestionsAndAnswers">
+        <property
+                name="csvQuestions" value="src/main/resources/countries.csv"/>
+    </bean>
+
+    <bean id="questionDao" class="com.otus.questionnaire.dao.QuestionDaoImpl">
+        <property name="qa" ref="questionsAndAnswers"/>
+    </bean>
+
+    <bean id="service" class="com.otus.questionnaire.service.QuestionnaireServiceImpl">
+        <property name="csv" ref="questionDao"/>
+    </bean>
+</beans>
