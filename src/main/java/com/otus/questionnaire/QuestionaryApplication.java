@@ -14,7 +14,7 @@ public class QuestionaryApplication {
                 "/spring-context.xml");
         QuestionnaireService service = context.getBean(QuestionnaireServiceImpl.class);
         QuestionsAndAnswers info = new QuestionsAndAnswers();
-        var questionnaire = service.printQuestionnaire((QuestionsAndAnswers) info);
+        var questionnaire = service.printQuestionnaire(info);
         questionnaire.forEach((q, a) -> System.out.printf("%s: \n\t%s/ %s \n\n", q, a.get(0), a.get(1))
         );
     }
