@@ -1,7 +1,6 @@
 package com.otus.questionnaire.dao;
 
 import com.otus.questionnaire.domain.QuestionsAndAnswers;
-import lombok.Data;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
 
@@ -23,7 +22,7 @@ public class QuestionDaoImpl implements  QuestionDao{
     @Override
     public Map<String, List<String>> questionnaire(QuestionsAndAnswers qa) throws IOException {
 
-        Reader questions = new FileReader(qa.getCsvQuestions());
+        Reader questions = new FileReader(this.qa.getCsvQuestions());
         Iterable<CSVRecord> records = CSVFormat.RFC4180.withHeader("country", "opt1", "opt2").parse(questions);
         Map<String, List<String>> qaMapper = new HashMap<>();
         for (CSVRecord record : records) {

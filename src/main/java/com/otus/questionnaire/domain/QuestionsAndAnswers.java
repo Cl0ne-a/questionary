@@ -4,5 +4,5 @@ import lombok.Data;
 
 @Data
 public class QuestionsAndAnswers{
-    private String csvQuestions = "src/main/resources/countries.csv";
+    private String csvQuestions;
 }
