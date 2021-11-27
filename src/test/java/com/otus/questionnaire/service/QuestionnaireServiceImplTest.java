@@ -20,14 +20,14 @@ class QuestionnaireServiceImplTest {
             "Capital of Scotland", List.of(" Edinburgh", " Toronto")
     );
 
-    @Test
-    public void test() throws IOException {
-        QuestionsAndAnswers qa = mock(QuestionsAndAnswers.class);
-        QuestionDao csv = mock(QuestionDao.class);
-
-        mock.printQuestionnaire(qa);
-
-        when(mock.printQuestionnaire(qa)).thenReturn(expectetd);
-        verify(mock).printQuestionnaire(qa);
-    }
+//    @Test
+//    public void test() throws IOException {
+//        QuestionsAndAnswers qa = mock(QuestionsAndAnswers.class);
+//        QuestionDao csv = mock(QuestionDao.class);
+//
+//        mock.printQuestionnaire(qa);
+//
+//        when(mock.printQuestionnaire(qa)).thenReturn(expectetd);
+//        verify(mock).printQuestionnaire(qa);
+//    }
 }

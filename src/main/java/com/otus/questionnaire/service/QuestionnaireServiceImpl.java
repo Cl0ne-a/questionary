@@ -11,16 +11,13 @@ import java.util.Map;
 @Data
 public class QuestionnaireServiceImpl implements QuestionnaireService {
     private QuestionDao csv;
+    private QuestionsAndAnswers questionsAndAnswers;
 
-    public QuestionnaireServiceImpl() {
-    }
-
-    public void setCsv(QuestionDao csv) {
+    public QuestionnaireServiceImpl(QuestionDao csv) {
         this.csv = csv;
     }
 
-    @Override
-    public Map<String, List<String>> printQuestionnaire(QuestionsAndAnswers qa) throws IOException {
-        return csv.questionnaire(qa);
+    public Map<String, List<String>> printQuestionnaire()  {
+        return csv.questionnaire();
     }
 }
