@@ -11,12 +11,10 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class QuestionaryApplication {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(ConfigFile.class);
         QuestionnaireService service = context.getBean(QuestionnaireServiceImpl.class);
 
-        var questionnaire = service.printQuestionnaire();
-
-        questionnaire.forEach((q, a) -> System.out.printf("%s: \n\t%s/ %s \n\n", q, a.get(0), a.get(1)));
+        service.questionInit();
     }
 }

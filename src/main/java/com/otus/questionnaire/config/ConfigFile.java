@@ -2,7 +2,7 @@ package com.otus.questionnaire.config;
 
 import com.otus.questionnaire.dao.QuestionDao;
 import com.otus.questionnaire.dao.QuestionDaoImpl;
-import com.otus.questionnaire.domain.QuestionsAndAnswers;
+import com.otus.questionnaire.domain.Quiz;
 import com.otus.questionnaire.service.QuestionnaireService;
 import com.otus.questionnaire.service.QuestionnaireServiceImpl;
 import org.springframework.beans.factory.annotation.Value;
@@ -13,17 +13,20 @@ import org.springframework.context.annotation.PropertySource;
 @Configuration
 @PropertySource("classpath:application.properties")
 public class ConfigFile {
-    @Value("${questionsAndAnswer.csvQuestions}")
+    @Value("${quiz.csvQuestions}")
     private String csvQuestions;
 
+    @Value("${quiz.csvAnswers}")
+    private String csvAnswers;
+
     @Bean
-    public QuestionsAndAnswers questionsAndAnswers(){
-        return new QuestionsAndAnswers(csvQuestions);
+    public Quiz quiz() {
+        return new Quiz(csvQuestions, csvAnswers);
     }
 
     @Bean
-    public QuestionDao questionDao(QuestionsAndAnswers questionsAndAnswers) {
-        return new QuestionDaoImpl(questionsAndAnswers);
+    public QuestionDao questionDao(Quiz quiz) {
+        return new QuestionDaoImpl(quiz);
     }
 
     @Bean
