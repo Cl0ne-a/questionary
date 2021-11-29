@@ -12,11 +12,11 @@ import java.util.Map;
 @Data
 @Component
 public class Quiz {
-    @Value("${quiz.csvQuestions}")
-    private final String csvQuestions;
+    @Value("${Quiz.csvQuestions}")
+    private String csvQuestions;
 
-    @Value("${quiz.csvAnswers}")
-    private final String csvAnswers;
+    @Value("${Quiz.csvAnswers}")
+    private String csvAnswers;
 
     private Map<String, List<String>> test;
 }
