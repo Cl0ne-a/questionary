@@ -14,11 +14,9 @@ import java.util.Scanner;
 @Data
 public class QuestionnaireServiceImpl implements QuestionnaireService {
     private final QuestionDao questionDao;
-    private final Quiz quiz;
 
-    public QuestionnaireServiceImpl(QuestionDao questionDao, Quiz quiz) {
+    public QuestionnaireServiceImpl(QuestionDao questionDao) {
         this.questionDao = questionDao;
-        this.quiz = quiz;
     }
 
     public Map<String, List<String>> uploadQuiz() {
