@@ -1,18 +1,19 @@
 package com.otus.questionnaire.service;
 
 import com.otus.questionnaire.dao.QuestionDao;
-import com.otus.questionnaire.domain.Quiz;
 import lombok.Data;
-import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
-@Service
+@Component
 @Data
 public class QuestionnaireServiceImpl implements QuestionnaireService {
+    @Autowired
     private final QuestionDao questionDao;
 
     public QuestionnaireServiceImpl(QuestionDao questionDao) {

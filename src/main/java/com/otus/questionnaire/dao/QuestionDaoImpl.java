@@ -3,7 +3,7 @@ package com.otus.questionnaire.dao;
 import com.otus.questionnaire.domain.Quiz;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.io.FileNotFoundException;
@@ -14,7 +14,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@Service
+@Component
 public class QuestionDaoImpl implements QuestionDao {
 
     private final Quiz quiz;
