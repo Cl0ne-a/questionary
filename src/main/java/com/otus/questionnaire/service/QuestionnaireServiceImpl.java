@@ -1,7 +1,6 @@
 package com.otus.questionnaire.service;
 
 import com.otus.questionnaire.dao.QuestionDao;
-import com.otus.questionnaire.domain.Quiz;
 import lombok.Data;
 
 import java.util.ArrayList;
@@ -12,7 +11,6 @@ import java.util.Scanner;
 @Data
 public class QuestionnaireServiceImpl implements QuestionnaireService {
     private QuestionDao csv;
-    private Quiz quiz;
 
     public QuestionnaireServiceImpl(QuestionDao csv) {
         this.csv = csv;

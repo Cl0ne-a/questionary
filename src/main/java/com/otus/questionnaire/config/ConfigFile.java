@@ -13,10 +13,7 @@ import org.springframework.context.annotation.PropertySource;
 @Configuration
 @PropertySource("classpath:application.properties")
 public class ConfigFile {
-    @Value("${quiz.csvQuestions}")
     private String csvQuestions;
-
-    @Value("${quiz.csvAnswers}")
     private String csvAnswers;
 
     @Bean
