@@ -81,14 +81,4 @@ public class QuestionDaoImpl implements QuestionDao {
         }
         return answerBase;
     }
-
-//    private Reader getReader(String source) {
-//        Reader questions = null;
-//        try {
-//            questions = new FileReader(source);
-//        } catch (FileNotFoundException e) {
-//            e.printStackTrace();
-//        }
-//        return questions;
-//    }
 }
