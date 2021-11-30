@@ -3,18 +3,17 @@ package com.otus.questionnaire.dao;
 import com.otus.questionnaire.domain.Quiz;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@Component
+import static com.otus.questionnaire.dao.CsvReader.getReader;
+
+@Service
 public class QuestionDaoImpl implements QuestionDao {
 
     private final Quiz quiz;
@@ -83,13 +82,13 @@ public class QuestionDaoImpl implements QuestionDao {
         return answerBase;
     }
 
-    private Reader getReader(String source) {
-        Reader questions = null;
-        try {
-            questions = new FileReader(source);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        return questions;
-    }
+//    private Reader getReader(String source) {
+//        Reader questions = null;
+//        try {
+//            questions = new FileReader(source);
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        }
+//        return questions;
+//    }
 }
